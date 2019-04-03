@@ -18,7 +18,8 @@ module.exports = (req, res, next) => {
         res.status(401).json({ message: "Can't touch this!" });
       } else {
         // all good
-        // req.decodedJwt = decodedToken; // this makes the rest of the payload available to the API
+
+        // req.decodedJwt = decodedToken; // <- if we wanted it, this makes the rest of the payload available to the API
 
         next();
       }
