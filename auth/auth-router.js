@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken'); // Step 1: Install and import 'jsonwebtoken'
 
 const Users = require('../users/users-model.js');
 
