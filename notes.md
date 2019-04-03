@@ -9,14 +9,14 @@ The main difference between using sessions and tokens for auth: where the state 
 
 ### Server
 
-= produce the token
+= produce the token (state is NOT stored in the server)
 = send the token to the client
 - read, decode, and verify the token
 = make the payload available to the rest of the API
 
 ### Client
 
-- store the token
+- store the token (remember that the client also keeps the state)
 - send the token on every request
 - destroy the token on logout
 
