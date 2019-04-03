@@ -23,6 +23,7 @@ The main difference between using sessions and tokens for auth: where the state 
 ## Common Token Types
 
 - auth token
-= access/authorization token - could be 60 mins, you trust this
-- refresh token
-    - long lived, perhaps 9 hours
+= access/authorization token 
+    - short lived; it could be 60 mins, but you trust this
+- refresh token (authentication access only; no authorization access)
+    - long lived; perhaps 9 hours
