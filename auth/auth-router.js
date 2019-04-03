@@ -3,6 +3,9 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken'); // Step 1: Install and import 'jsonwebtoken'
 
 const Users = require('../users/users-model.js');
+const secret = require('../api/secrets').jwtSecret; 
+// Step 7a: Make 'secret' an env variable to give restricted-middleware.js access to it.
+// Step 7b: Import 'jwtSecret' in from 'secrets'.
 
 // for endpoints beginning with /api/auth
 router.post('/register', (req, res) => {
@@ -54,7 +57,7 @@ function generateToken(user) {
 
   // Step 4: Define a variable called 'secret' for the parameter returned
   // in the 'generateToken()' function.
-  const secret = 'add a third table for many to many relationships';
+  // const secret = 'add a third table for many to many relationships';
   const options = {
     expiresIn: '1d',
   };
