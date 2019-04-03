@@ -3,7 +3,7 @@
 The main difference between using sessions and tokens for auth: where the state is kept.
 
 - When using SESSIONS, state is kept in the SERVER.
-- When using TOKENS, state is kept in the TOKEN (client).
+- When using TOKENS, state is kept in the client via the TOKEN. 
 
 ## Responsibilities
 
