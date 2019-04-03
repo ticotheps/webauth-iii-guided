@@ -55,6 +55,8 @@ function generateToken(user) {
     // ... any other data that we might want to add to the token here
   };
 
+  // ----------Step 7 extracts the 'const secret' into an env variable
+  // ----------so that we can use it in more than one place. 
   // Step 4: Define a variable called 'secret' for the parameter returned
   // in the 'generateToken()' function.
   // const secret = 'add a third table for many to many relationships';
