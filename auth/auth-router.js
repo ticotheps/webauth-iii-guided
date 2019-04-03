@@ -4,10 +4,6 @@ const jwt = require('jsonwebtoken'); // Step 1: Install and import 'jsonwebtoken
 
 const Users = require('../users/users-model.js');
 
-// Step 4: Define an env variable called 'secret' for the parameter returned
-// in the 'generateToken()' function.
-const secret = 'add a third table for many to many relationships';
-
 // for endpoints beginning with /api/auth
 router.post('/register', (req, res) => {
   let user = req.body;
@@ -23,20 +19,6 @@ router.post('/register', (req, res) => {
     });
 });
 
-// Step 3: Build a 'generateToken(user)' function.
-function generateToken(user) {
-  const payload = {
-    subject: user.id, // sub in payload is what the token is about
-    username: user.username,
-    // ... any other data that we might want to add to the token here
-  };
-
-  const options = {
-    expiresIn: '1d',
-  }
-
-  return jwt.sign(payload, secret, options);
-};
 
 router.post('/login', (req, res) => {
   let { username, password } = req.body;
@@ -60,5 +42,24 @@ router.post('/login', (req, res) => {
       res.status(500).json(error);
     });
 });
+
+
+// Step 3: Build a 'generateToken(user)' function.
+function generateToken(user) {
+  const payload = {
+    subject: user.id, // sub in payload is what the token is about
+    username: user.username,
+    // ... any other data that we might want to add to the token here
+  };
+
+  // Step 4: Define a variable called 'secret' for the parameter returned
+  // in the 'generateToken()' function.
+  const secret = 'add a third table for many to many relationships';
+  const options = {
+    expiresIn: '1d',
+  };
+
+  return jwt.sign(payload, secret, options); // returns a valid token
+};
 
 module.exports = router;
