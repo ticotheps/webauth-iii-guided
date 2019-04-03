@@ -1,7 +1,7 @@
 const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken'); // Step 1: Install and import 'jsonwebtoken'
 
 const authRouter = require('../auth/auth-router.js');
 const usersRouter = require('../users/users-router.js');
