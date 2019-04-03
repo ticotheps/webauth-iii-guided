@@ -19,7 +19,7 @@ module.exports = (req, res, next) => {
       } else {
         // all good
 
-        // req.decodedJwt = decodedToken; // <- if we wanted it, this makes the rest of the payload available to the API
+        req.decodedJwt = decodedToken; // <- if we wanted it, this makes the rest of the payload available to the API
 
         next();
       }

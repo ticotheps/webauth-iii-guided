@@ -53,6 +53,7 @@ function generateToken(user) {
     subject: user.id, // sub in payload is what the token is about
     username: user.username,
     // ... any other data that we might want to add to the token here
+    roles: ['student', 'ta'] // pretend they come from the database (user.roles)
   };
 
   // ----------Step 7 extracts the 'const secret' into an env variable
