@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
     jwt.verify(token, secret, (err, decodedToken) => {
       if (err) {
         // record the event
-        res.status(401).json({ message: 'You shall not pass!' });
+        res.status(401).json({ message: "Can't touch this!" });
       } else {
         next();
       }
